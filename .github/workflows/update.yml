@@ -1,7 +1,9 @@
 name: update-flake-lock
 on:
   workflow_dispatch:
-
+permissions:
+  pull-requests: write
+  contents: write
 jobs:
   lockfile:
     runs-on: ubuntu-latest
@@ -11,4 +13,4 @@ jobs:
       - name: Install Nix
         uses: DeterminateSystems/nix-installer-action@v1
       - name: Update flake.lock
-        uses: DeterminateSystems/update-flake-lock@v4
+        uses: Mic92/update-flake-lock@main
